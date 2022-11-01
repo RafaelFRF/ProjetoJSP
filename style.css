@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fs-i-70 {
+  font-size: 70px;
+}
+
+.mw-120px {
+  min-width: 120px;
+}
+
+.p-tb-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
