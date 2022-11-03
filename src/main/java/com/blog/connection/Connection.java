@@ -5,11 +5,11 @@ import java.sql.SQLException;
 
 public class Connection {
 
-  public static java.sql.Connection Connect(){
+  public static java.sql.Connection connect(){
     java.sql.Connection con = null;
-    String url = "jdbc:mysql://localhost:3306/agenda";
+    String url = "jdbc:mysql://localhost:3306/blog";
     String user = "root";
-    String password = "root";
+    String password = "";
     try {
       // Class.forName("org.mysql.Driver");
       Class.forName("com.mysql.cj.jdbc.Driver");

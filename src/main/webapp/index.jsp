@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="com.blog.dao.DaoTeste" %>
+<%@ page import="com.blog.entidades.Teste" %>
+
+
 <!-- Para tirar o bug de letras -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +44,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col border border-info p-4 text-container" data-id="7">
         <h3 class="fw-bolder">teste</h3>
@@ -64,6 +68,11 @@
   <footer class="text-bg-info text-end p-1 fs-6">
     Thanks for comming
   </footer>
+
+  <%
+    String retorno = DaoTeste.salvar();
+    out.write("//"+ retorno);
+  %>
 
 </body>
 
