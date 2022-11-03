@@ -70,8 +70,7 @@
   </footer>
 
   <%
-    String retorno = DaoTeste.salvar();
-    out.write("//"+ retorno);
+
   %>
 
 </body>
