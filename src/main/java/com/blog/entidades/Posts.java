@@ -37,4 +37,5 @@ public class Posts {
   public void setTextPost(String textPost) {
     this.textPost = textPost;
   }
+
 }
