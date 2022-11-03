@@ -1,7 +1,7 @@
 const btLogout = () => {
   localStorage.setItem('blog-login', false)
   let bLogin = document.querySelector('#bt_login_home')
-  bLogin.classList.remove('d-off')  
+  bLogin.classList.remove('d-off')
   let bLogout = document.querySelector('#bt_logout_home')
   bLogout.classList.add('d-off')
   let iComment = document.querySelectorAll('.comment')
@@ -16,7 +16,7 @@ const btLogout = () => {
 
 const btLogin = () => {
   let bLogin = document.querySelector('#bt_login_home')
-  bLogin.classList.add('d-off')  
+  bLogin.classList.add('d-off')
   let bLogout = document.querySelector('#bt_logout_home')
   bLogout.classList.remove('d-off')
   let iComment = document.querySelectorAll('.comment')
@@ -35,9 +35,9 @@ const validateLogin = () => {
 }
 
 const usernameValidate = () => {
-  
+
   var username = document.querySelector('#username')
-  
+
   if(username.value == ""){
     username.focus()
     alert("Fill the username correctly!")
@@ -56,7 +56,7 @@ const passwordValidate = () => {
     password.focus()
     alert("Fill the password correctly!")
     return false
-  } 
+  }
   else if(password.value.length < 6){
     password.focus()
     alert("Fill the password correctly!")
@@ -66,7 +66,7 @@ const passwordValidate = () => {
 }
 
 const goBackHome = () => {
-  document.location.href = "pag1.html"
+  document.location.href = "index.jsp"
 }
 
 
@@ -77,13 +77,14 @@ const showHideContent = (id) => {
   let commentHome = element.getAttribute("data-text")
   element.innerText === commentHome ? element.innerText = commentHome.slice(0,15) :  element.innerText = commentHome
   const buttonElement = document.querySelector(`[data-id='${id}'] .s-h-button`)
-  // if else 2 opções
+  // if else 2 options
   buttonElement.innerText === "Hide" ? buttonElement.innerText = "Show" :  buttonElement.innerText = "Hide"
 }
 
 
 // arrow function
 const inputValidate = () => {
+  debugger;
   if(!usernameValidate()) return;
   if(!passwordValidate()) return;
   localStorage.setItem('blog-login', true)
