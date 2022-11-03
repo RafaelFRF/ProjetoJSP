@@ -50,15 +50,21 @@
     </div>
 
 
-    <%
+    <%--
+    List<Posts> posts = DaoPosts.getLastPosts();
+    for(Posts posts : post){
+      String titlePost = posts.getTitlePost();
+      String textPost = posts.getTextPost();
+      Int idPost = posts.getIdPost();
+
       out.write("<div class='row'>");
-        out.write("<div class='col border border-info p-4 text-container' data-id=" +  + ">");
-          out.write("<h3 class='fw-bolder'>teste</h3>");
-            out.write("<p class='text-blog' style='display: block;' data-text='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem non, odio possimus ex alias voluptas minus rem accusamus quis aliquid sunt praesentium! Dolores voluptatibus perspiciatis temporibus aut error praesentium soluta asperiores nulla quas, dicta sapiente, veniam delectus eaque. Praesentium, est temporibus earum quae blanditiis magni soluta cupiditate fugit eum a iusto itaque, laborum veniam. Ipsa qui nobis ratione, eos et quisquam quos adipisci eum possimus dolorem dolore sed tempora nihil ab quaerat sit repellat illum, deserunt, aperiam ducimus voluptatum ex minus corrupti doloremque? Perspiciatis corporis assumenda, facere fugit nulla inventore porro odit id. Repudiandae, vel atque quis voluptate facilis reprehenderit!' data-hidden='true'>Lorem ipsum dol...</p>");
-            out.write("<button class='btn btn-outline-info mw-120px s-h-button' onclick='showHideContent(" + getIdPosts() + ")'>Show</button>");
+        out.write("<div class='col border border-info p-4 text-container' data-id=" + idPost + ">");
+          out.write("<h3 class='fw-bolder'>" + titlePost + "</h3>");
+            out.write("<p class='text-blog' style='display: block;' data-text='" + textPost + "</p>");
+            out.write("<button class='btn btn-outline-info mw-120px s-h-button' onclick='showHideContent(" + idPost + ")'>Show</button>");
         out.write("</div>");
       out.write("</div>");
-    %>
+    --%>
 
   </section>
 

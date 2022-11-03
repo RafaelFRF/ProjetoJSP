@@ -7,8 +7,6 @@
     <list default="true" id="38c06a9a-25a9-4037-a467-f70b846d96f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/connection/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/connection/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoPosts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoPosts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/entidades/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/entidades/Posts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
