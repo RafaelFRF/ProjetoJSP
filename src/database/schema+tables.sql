@@ -11,20 +11,12 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
+USE `blog` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Table `blog`.`users`
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`users`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`users` (
+CREATE TABLE IF NOT EXISTS `blog`.`users` (
   `idUsers` INT NOT NULL AUTO_INCREMENT,
   `emailUser` VARCHAR(50) NOT NULL,
   `passwordUser` VARCHAR(15) NOT NULL,
@@ -34,20 +26,20 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`posts`
+-- Table `blog`.`posts`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`posts` (
+CREATE TABLE IF NOT EXISTS `blog`.`posts` (
   `idPosts` INT NOT NULL AUTO_INCREMENT,
-  `titlePost` VARCHAR(50) NOT NULL,
-  `textPost` VARCHAR(1000) NOT NULL,
+  `titlePost` VARCHAR(120) NOT NULL,
+  `textPost` VARCHAR(2000) NOT NULL,
   PRIMARY KEY (`idPosts`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`comments`
+-- Table `blog`.`comments`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`comments` (
+CREATE TABLE IF NOT EXISTS `blog`.`comments` (
   `idComments` INT NOT NULL AUTO_INCREMENT,
   `textComment` VARCHAR(200) NOT NULL,
   `validateComment` CHAR(1) NOT NULL,
@@ -58,12 +50,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`comments` (
   INDEX `fk_comments_posts1_idx` (`posts_idPosts` ASC) VISIBLE,
   CONSTRAINT `fk_comments_users`
     FOREIGN KEY (`users_idUsers`)
-    REFERENCES `mydb`.`users` (`idUsers`)
+    REFERENCES `blog`.`users` (`idUsers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_comments_posts1`
     FOREIGN KEY (`posts_idPosts`)
-    REFERENCES `mydb`.`posts` (`idPosts`)
+    REFERENCES `blog`.`posts` (`idPosts`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -72,3 +64,31 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- PREENCHENDO AS TABELAS
+insert into users(emailUser, passwordUser, typeUser) values ("adm@.com", "adm@123", "adm");
+insert into users(emailUser, passwordUser, typeUser) values ("1@.com", "123456", "com");
+insert into users(emailUser, passwordUser, typeUser) values ("2@.com", "123456", "com");
+insert into users(emailUser, passwordUser, typeUser) values ("3@.com", "123456", "com");
+insert into users(emailUser, passwordUser, typeUser) values ("vilson@.com", "professor", "com");
+
+insert into posts(titlePost, textPost) values ("Saiba o que é e qual a importância a sua empresa!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum condimentum mi, vitae venenatis sapien interdum a. Praesent vitae odio rhoncus eros egestas pellentesque. Aliquam euismod dolor nibh, finibus dictum odio tincidunt quis. Vivamus mattis varius ipsum, id interdum velit facilisis fermentum. Cras at consectetur quam. Ut lorem sem, vulputate sed aliquam non, condimentum sit amet ante. In consectetur sapien id est porta tincidunt. Praesent sed risus nec libero auctor ullamcorper. Ut non dui dolor. Praesent vel semper ligula. Sed venenatis ut arcu vitae varius. Nunc sed libero laoreet, ullamcorper quam id, dictum libero. Donec porta sem ac nunc gravida fringilla sit amet efficitur nulla. Vestibulum vel nulla ut magna viverra fermentum in at lectus.");
+insert into posts(titlePost, textPost) values ("Como ser um bom ? 15 dicas para bater a meta todo mês", "Aenean vulputate, dui et varius mollis, massa diam mollis sem, nec euismod lacus libero a ex. Aenean tempor, sem ut molestie viverra, dui nisl suscipit dui, vitae maximus libero nisl ut nibh. Nulla congue lorem vitae augue porttitor, sit amet mattis mi feugiat. Donec ipsum risus, blandit a augue vitae, malesuada tempus est. Morbi rhoncus sit amet tortor ac auctor. Donec ut ipsum quis lectus tincidunt maximus sit amet vel mauris. Maecenas suscipit enim nec enim pharetra convallis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque posuere massa et eleifend posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+insert into posts(titlePost, textPost) values ("5 que vão motivar você", "Integer iaculis augue accumsan, lacinia eros eget, efficitur purus. Aenean tempus porttitor libero id luctus. Maecenas vitae ornare massa. Aenean vel erat quis mauris scelerisque gravida. Duis a ultrices orci. Aenean vel placerat orci. Donec sed semper metus. In nulla nibh, consectetur vitae vehicula eu, consequat ac justo. Nunc rutrum, tellus et pulvinar pharetra, eros mi malesuada arcu, lacinia vehicula diam lectus a urna. Donec fermentum hendrerit lorem at rutrum. Nunc convallis nibh in orci lobortis maximus. Nam id condimentum neque.");
+insert into posts(titlePost, textPost) values ("o que é e como fazer uma incrível", "Morbi eget mauris facilisis, rhoncus sapien ultrices, finibus nunc. Aenean accumsan sagittis magna, et blandit augue consequat vel. Aenean ut orci rhoncus, bibendum nisi in, pharetra nulla. In placerat justo at sem dignissim, non mollis est mollis. Praesent lacinia bibendum nisl ac elementum. Curabitur tempus velit eros, sit amet aliquam ex ultrices in. Cras non quam a nunc mollis viverra. Etiam at est ac risus vehicula bibendum. Sed at purus eu nisl ultrices scelerisque eu quis est. Duis feugiat vehicula convallis. Nam pretium arcu nunc, sed dignissim dolor tempor nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse id diam ut ligula venenatis dictum.");
+insert into posts(titlePost, textPost) values ("O que ninguém conta de", "Vivamus at turpis diam. Cras tortor lacus, semper eget arcu quis, eleifend euismod neque. Vivamus faucibus sagittis mauris, at pretium augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam faucibus molestie pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique posuere mauris, eu sodales sapien gravida in. Pellentesque elementum nisl sem, id mollis libero molestie sit amet. Nunc egestas, diam in suscipit sollicitudin, diam ipsum ultricies tortor, pharetra malesuada.");
+insert into posts(titlePost, textPost) values ("3 ideias de", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum condimentum mi, vitae venenatis sapien interdum a. Praesent vitae odio rhoncus eros egestas pellentesque. Aliquam euismod dolor nibh, finibus dictum odio tincidunt quis. Vivamus mattis varius ipsum, id interdum velit facilisis fermentum. Cras at consectetur quam. Ut lorem sem, vulputate sed aliquam non, condimentum sit amet ante. In consectetur sapien id est porta tincidunt. Praesent sed risus nec libero auctor ullamcorper. Ut non dui dolor. Praesent vel semper ligula. Sed venenatis ut arcu vitae varius. Nunc sed libero laoreet, ullamcorper quam id, dictum libero. Donec porta sem ac nunc gravida fringilla sit amet efficitur nulla. Vestibulum vel nulla ut magna viverra fermentum in at lectus.");
+insert into posts(titlePost, textPost) values ("O que fazer com ? 14 dicas para aproveitar", "Aenean vulputate, dui et varius mollis, massa diam mollis sem, nec euismod lacus libero a ex. Aenean tempor, sem ut molestie viverra, dui nisl suscipit dui, vitae maximus libero nisl ut nibh. Nulla congue lorem vitae augue porttitor, sit amet mattis mi feugiat. Donec ipsum risus, blandit a augue vitae, malesuada tempus est. Morbi rhoncus sit amet tortor ac auctor. Donec ut ipsum quis lectus tincidunt maximus sit amet vel mauris. Maecenas suscipit enim nec enim pharetra convallis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque posuere massa et eleifend posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+insert into posts(titlePost, textPost) values ("5 passos essenciais para", "Integer iaculis augue accumsan, lacinia eros eget, efficitur purus. Aenean tempus porttitor libero id luctus. Maecenas vitae ornare massa. Aenean vel erat quis mauris scelerisque gravida. Duis a ultrices orci. Aenean vel placerat orci. Donec sed semper metus. In nulla nibh, consectetur vitae vehicula eu, consequat ac justo. Nunc rutrum, tellus et pulvinar pharetra, eros mi malesuada arcu, lacinia vehicula diam lectus a urna. Donec fermentum hendrerit lorem at rutrum. Nunc convallis nibh in orci lobortis maximus. Nam id condimentum neque.");
+insert into posts(titlePost, textPost) values ("a longo prazo", "Morbi eget mauris facilisis, rhoncus sapien ultrices, finibus nunc. Aenean accumsan sagittis magna, et blandit augue consequat vel. Aenean ut orci rhoncus, bibendum nisi in, pharetra nulla. In placerat justo at sem dignissim, non mollis est mollis. Praesent lacinia bibendum nisl ac elementum. Curabitur tempus velit eros, sit amet aliquam ex ultrices in. Cras non quam a nunc mollis viverra. Etiam at est ac risus vehicula bibendum. Sed at purus eu nisl ultrices scelerisque eu quis est. Duis feugiat vehicula convallis. Nam pretium arcu nunc, sed dignissim dolor tempor nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse id diam ut ligula venenatis dictum.");
+insert into posts(titlePost, textPost) values ("Como ganhar ? Transforme sua empresa em sucesso!", "Vivamus at turpis diam. Cras tortor lacus, semper eget arcu quis, eleifend euismod neque. Vivamus faucibus sagittis mauris, at pretium augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam faucibus molestie pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tristique posuere mauris, eu sodales sapien gravida in. Pellentesque elementum nisl sem, id mollis libero molestie sit amet. Nunc egestas, diam in suscipit sollicitudin, diam ipsum ultricies tortor, pharetra malesuada.");
+insert into posts(titlePost, textPost) values ("O que é e quais as diferenças para o", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum condimentum mi, vitae venenatis sapien interdum a. Praesent vitae odio rhoncus eros egestas pellentesque. Aliquam euismod dolor nibh, finibus dictum odio tincidunt quis. Vivamus mattis varius ipsum, id interdum velit facilisis fermentum. Cras at consectetur quam. Ut lorem sem, vulputate sed aliquam non, condimentum sit amet ante. In consectetur sapien id est porta tincidunt. Praesent sed risus nec libero auctor ullamcorper. Ut non dui dolor. Praesent vel semper ligula. Sed venenatis ut arcu vitae varius. Nunc sed libero laoreet, ullamcorper quam id, dictum libero. Donec porta sem ac nunc gravida fringilla sit amet efficitur nulla. Vestibulum vel nulla ut magna viverra fermentum in at lectus.");
+
+insert into comments(textComment, validateComment, users_idUsers, posts_idPosts) values ("shows a lot of promise as a student.", "y", 2, 1);
+insert into comments(textComment, validateComment, users_idUsers, posts_idPosts) values ("He seems to like participating in class activities.", "y", 3, 2);
+insert into comments(textComment, validateComment, users_idUsers, posts_idPosts) values ("It's nice when he participates in class.", "y", 4, 1);
+insert into comments(textComment, validateComment, users_idUsers, posts_idPosts) values ("He gets quite excited when he sees an opportunity to participate in class and show off his English skills.", "y", 4, 2);
+
+select * from users;
+select * from posts;
+select * from comments;
