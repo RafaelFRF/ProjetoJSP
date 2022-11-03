@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38c06a9a-25a9-4037-a467-f70b846d96f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/database/diagram.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/diagram.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/schema+tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/schema+tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/connection/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/connection/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/connection/Conexao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoComments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoPosts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/entidades/Comments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/entidades/Posts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/blog/entidades/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/connection/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/DaoTeste.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

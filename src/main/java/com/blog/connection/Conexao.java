@@ -3,9 +3,9 @@ package com.blog.connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connection {
+public class Conexao {
 
-  public static java.sql.Connection connect(){
+  public static java.sql.Connection conectar(){
     java.sql.Connection con = null;
     String url = "jdbc:mysql://localhost:3306/blog";
     String user = "root";
