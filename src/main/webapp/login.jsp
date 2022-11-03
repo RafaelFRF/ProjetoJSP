@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!-- Para tirar o bug de letras -->
 <!DOCTYPE html>
 <html lang="en">
 

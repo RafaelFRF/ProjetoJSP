@@ -84,7 +84,6 @@ const showHideContent = (id) => {
 
 // arrow function
 const inputValidate = () => {
-  debugger;
   if(!usernameValidate()) return;
   if(!passwordValidate()) return;
   localStorage.setItem('blog-login', true)
