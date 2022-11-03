@@ -39,7 +39,8 @@
         </div>
         <div class="d-flex justify-content-between">
           <button class="btn btn-outline-info mw-120px" onclick="inputValidate()">Login</button>
-          <button class="btn btn-outline-info mw-120px" onclick="inputValidate()">Cadastrar</button>
+          <!-- Não foi solicitado fazer cadastrar especificamente, então só será implementado de fato se o tempo permitir -->
+          <!-- <button class="btn btn-outline-info mw-120px" onclick="inputValidate()">Cadastrar</button> -->
         </div>
       </div>
     </div>

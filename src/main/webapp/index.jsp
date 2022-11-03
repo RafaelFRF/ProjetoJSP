@@ -34,10 +34,11 @@
         <div class="p-tb-10">
           <h3 class="fw-bolder fs-6">Comments <span class="note d-off">| Note: Log in to comment</span></h3>
           <input type="text" class="form-control d-off comment" placeholder="Comment here!">
+          <button class="btn btn-outline-info mw-120px d-off comment" onclick="sendContent()">Send</button>
         </div>
       </div>
     </div>
-
+    
     <div class="row">
       <div class="col border border-info p-4 text-container" data-id="7">
         <h3 class="fw-bolder">teste</h3>
@@ -52,6 +53,7 @@
           <p>Não sei oq lá</p>
           <p>Não sei oq lá</p>
           <input type="text" class="form-control d-off comment" placeholder="Comment here!">
+          <button class="btn btn-outline-info mw-120px d-off comment" onclick="sendContent()">Send</button>
         </div>
       </div>
     </div>
